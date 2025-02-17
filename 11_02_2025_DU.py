@@ -40,12 +40,17 @@ class LinkedList:
     def najdi_prvok(self, target):
         aktualny = self.head
         count=0
+        found=False
         while aktualny.dalsi_prvok != None:
             count+=1
             if aktualny.data==target:
                 print('Prvok najdeny na pozicii ', count)
+                found=True
+                break
             else:
                 aktualny = aktualny.dalsi_prvok
+        if aktualny.data == target and found!=True:
+            print('Prvok najdeny na pozicii ', count+1)
 
 class Prvok:
     def __init__(self, data):
